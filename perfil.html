@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil - Zyora</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/icon-page.png" type="image/x-icon">
+    <style>
+        .img-header-back {
+            margin-left: 60px;
+            width: 60px;
+            height: 60px;
+        }
+        .perfil-card {
+            background: #222222;
+            color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(26, 26, 26, 0.2);
+            border: #141414 solid 9px;
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 32px 24px;
+            
+        }
+        .perfil-card h2 {
+            margin-bottom: 18px;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+        .perfil-card p {
+            margin: 10px 0;
+            font-size: 1.5em;
+        }
+        .btn-sair {
+            margin-top: 24px;
+            border: none;
+            border-radius: 8px;
+            padding: 5px 10px;
+            font-size: 1em;
+            cursor: pointer;
+            font-weight: bold;
+            color: #b71c1c;
+            transition: background 0.2s;
+        }
+        .btn-sair:hover {
+            background: #b71c1c;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <img style="cursor: pointer;" src="img/icon-back.png" alt="back" class="img-header-back" onclick="window.location.href='index.html'">
+            <img style="margin-left: 10px;" src="img/titulo-header.png" alt="Zyora" class="img-header-title">
+        </div>
+
+    </header>
+
+    <div class="perfil-card">
+        <h2>Perfil do Usuário</h2>
+        <p><strong>Nome:</strong> <span id="perfil-nome"></span></p>
+        <p><strong>E-mail:</strong> <span id="perfil-email"></span></p>
+        <p><strong>Senha:</strong> <span id="perfil-senha"></span></p>
+        <p><strong>Data de nascimento:</strong> <span id="perfil-data"></span></p>
+        <button class="btn-sair" id="btn-sair">Sair da conta</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script>
+        const nomeUsuario = localStorage.getItem('usuario_nome');
+        const emailUsuario = localStorage.getItem('usuario_email');
+        const SUPABASE_URL = 'https://jjrhshqrfnywriqmlrkx.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpqcmhzaHFyZm55d3JpcW1scmt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgzOTc0MzEsImV4cCI6MjA3Mzk3MzQzMX0.81Sn4EC_qJCd764tSRmXHipGGCLPWFVHiRE5ObqTQJQ';
+        const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        document.getElementById('perfil-nome').textContent = nomeUsuario || '';
+        document.getElementById('perfil-email').textContent = emailUsuario || '';
+
+       async function buscarDados() {
+            if (emailUsuario) {
+                const { data, error } = await client
+                    .from('usuarios')
+                    .select('senha, data_nascimento')
+                    .eq('email', emailUsuario)
+                    .single();
+
+                if (data) {
+                    document.getElementById('perfil-senha').textContent = data.senha || '';
+                    const dataNascimento = new Date(data.data_nascimento);
+                    document.getElementById('perfil-data').textContent = dataNascimento.toLocaleDateString('pt-BR');
+                }
+            }
+        }
+        buscarDados();
+
+
+        document.getElementById('btn-sair').onclick = function() {
+            localStorage.removeItem('usuario_nome');
+            localStorage.removeItem('usuario_email');
+            window.location.href = 'index.html';
+        };
+    </script>
+</body>
+</html>

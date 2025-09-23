@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Karma:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Karma', serif;
+    background-color: #EEE6AB;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8%;
+}
+
+.cadastro-box {
+    background: linear-gradient(135deg, #232323 80%, #313233 100%);
+    padding: 40px 50px;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px #C5BC8E55;
+    min-width: 340px;
+}
+
+.cadastro-title {
+    color: #fff;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.cadastro-form label {
+    color: #EEE6AB;
+    font-weight: 500;
+}
+
+.cadastro-form input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #CFC280;
+    border-radius: 8px;
+    margin-top: 6px;
+    font-size: 1rem;
+    margin-bottom: 18px;
+}
+
+.btn-cadastro {
+    background-color: #9F7638;
+    color: #EEE6AB;
+    border: 2px solid #CFC280;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    margin: 20px 0px 0px 32.5%;
+}
+
+.btn-cadastro:hover {
+    background-color: #CFC280;
+    color: #45484B;
+    border-color: #9F7638;
+}
+
+.cadastro-link {
+    text-align: center;
+    margin-top: 18px;
+    color: #EEE6AB;
+}
+
+.cadastro-link a {
+    color: #CFC280;
+    text-decoration: underline;
+}

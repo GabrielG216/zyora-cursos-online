@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de curso - Zyora</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="curso.css">
+  <link rel="icon" href="img/icon-page.png" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <div>
+      <img style="margin: 12px 0px 0px 40px; cursor: pointer; width: 60px;" class="back-image" src="img/icon-back.png" alt="back" onclick="window.location.href='index.html'">
+      <img style="margin-left: 10px;" src="img/titulo-header.png" alt="Zyora" class="img-header-title">
+    </div>
+  </header>
+
+  <div class="position-row">
+    <div id="curso-detalhes" class="container"></div>
+    <div id="card-curso-selecionado"></div>
+  </div>
+
+  <script>
+    async function carregarCurso() {
+      const params = new URLSearchParams(window.location.search);
+      const categoriaId = params.get("categoria");
+
+      const response = await fetch("cursos.json");
+      const data = await response.json();
+
+      const container = document.getElementById("curso-detalhes");
+
+      if(categoriaId){
+        const categoria = data.categorias.find(c => c.id == categoriaId);
+        if(categoria){
+          container.innerHTML = `
+            <h1>${categoria.nome}</h1>
+            <p class="subtitulo">${categoria.descricao}</p>
+            <div class="subcursos-container">
+              ${categoria.subcursos.map(sub => `
+                <div class="subcurso-card">
+                  <img src="img-curso/${sub.imagem}" alt="${sub.nome}" class="subcurso-img">
+                  <h3>${sub.nome}</h3>
+                  <p class="descricao-curso">${sub.descricao}</p>
+                  <button onclick="mostrarCurso(${sub.id})" class="btn-ver-curso">Ver Curso</button>
+                </div>
+              `).join('')}
+            </div>
+          `;
+        } else {
+          container.innerHTML = "<p>Categoria não encontrada.</p>";
+        }
+      } else {
+        container.innerHTML = "<p>Nenhum curso selecionado.</p>";
+      }
+    }
+
+    async function mostrarCurso(subcursoId) {
+      const response = await fetch("cursos.json");
+      const data = await response.json();
+
+      let cursoEncontrado = null;
+      data.categorias.forEach(cat => {
+        cat.subcursos.forEach(sub => {
+          if (sub.id == subcursoId) {
+            cursoEncontrado = { ...sub, categoria: cat.nome };
+          }
+        });
+      });
+
+      const cardSelecionado = document.getElementById("card-curso-selecionado");
+
+      if(cursoEncontrado){
+        cardSelecionado.style.display = "block";
+        cardSelecionado.innerHTML = `
+          <h2>${cursoEncontrado.nome}</h2>
+          <h4>Categoria: ${cursoEncontrado.categoria}</h4>
+          <img src="img-curso/${cursoEncontrado.imagem}" alt="${cursoEncontrado.nome}" class="curso-img">
+          <p class="info-curso">${cursoEncontrado.descricao}</p>
+
+          <h3 class="professor">Professor</h3>
+          <img src="img-curso/${cursoEncontrado.professor.imagem}" alt="${cursoEncontrado.professor.nome}" class="professor-img">
+          <h4 class="nome-professor">${cursoEncontrado.professor.nome}</h4>
+          <p class="info-curso">${cursoEncontrado.professor.descricao}</p> 
+        `;
+        window.scrollTo({ top: cardSelecionado.offsetTop - 50, behavior: 'smooth' });
+      } else {
+        cardSelecionado.innerHTML = "<p>Curso não encontrado.</p>";
+        cardSelecionado.style.display = "block";
+      }
+    }
+
+    carregarCurso();
+  </script>
+</body>
+</html>

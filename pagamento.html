@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento - Zyora</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/icon-page.png" type="image/x-icon">
+    <style>
+
+        .container {
+    width: 90%;              /* ocupa quase toda a tela no mobile */
+    max-width: 700px;        /* limite no desktop */
+    margin: 40px auto;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    border: 8px solid #222;
+}
+
+.img-header-back {
+    margin-left: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: clamp(1.5rem, 2.5vw, 2rem); /* responsivo */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+input[type="text"], 
+input[type="number"], 
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap; /* quebra no mobile */
+}
+
+.input-group input {
+    flex: 1; /* divide espaço igualmente */
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+form p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    margin-top: 20px;
+}
+
+.btn-group {
+    text-align: center;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-group div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-group p {
+    color: #cfcfcf;
+}
+
+.btn-group .btn {
+    margin: 0 5px;
+}
+
+.valor {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: bold;
+}
+
+#pix-img {
+    display: none; /* escondida no começo */
+    margin-top: 20px;
+    max-width: 180px;
+    width: 100%;
+    height: auto;
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>
+            <img style="cursor: pointer;" src="img/icon-back.png" alt="back" class="img-header-back" onclick="window.location.href='index.html'">
+            <img style="margin-left: 10px;" src="img/titulo-header.png" alt="Zyora" class="img-header-title">
+        </div>
+
+    </header>
+
+<div class="container">
+    <h2>Pagamento - Pro/Special/Gold</h2>
+
+    <form>
+        <label for="nome">Nome completo:</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo..." required>
+
+        <label for="cartao">Número do cartão:</label>
+        <input type="text" id="cartao" name="cartao" placeholder="0000 0000 0000 0000" required>
+
+        <div class="input-group">
+            <div>
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" placeholder="CVV" maxlength="3" required>
+            </div>
+            <div>
+                <label for="cvv">MM/AA:</label>
+                <input type="text" id="validade" name="validade" placeholder="MM/AA" maxlength="5" required>
+            </div>
+        </div>
+
+        <label for="desconto">Código de desconto:</label>
+        <input type="text" id="desconto" name="desconto" placeholder="Descubra o código de desconto..." required>
+        
+        
+        <button type="button" class="btn" id="btn-aplicar">Aplicar</button>
+
+        <p id="mensagem-desconto" style="display: none; color: #00e676; font-weight: bold; margin-top: 10px;">
+            Parabéns, você descobriu o desconto!! 🎉🎉
+        </p>
+
+
+        <p><strong>Valor total a pagar:</strong> <br> <span id="valor-total" class="valor">R$00,00</span></p>
+
+        <div class="btn-group">
+            <div>
+            <button type="submit" class="btn">Pagar</button>
+            <button type="button" class="btn" onclick="mostrarImagem()">PIX</button>
+            <p>á vista</p>
+            </div>
+
+            <img id="pix-img" src="img/pix_22_28_02.png" alt="QRCode PIX">
+        </div>
+    </form>
+</div>
+
+<script>
+    const nomePlano = localStorage.getItem('plano_nome') || 'Plano';
+    const precoPlano = localStorage.getItem('plano_preco') || 'R$00,00';
+
+    document.querySelector('h2').textContent = `Pagamento - ${nomePlano}`;
+
+    document.getElementById('valor-total').textContent = precoPlano;
+
+    document.getElementById('btn-aplicar').onclick = function () {
+        let desconto = document.getElementById('desconto').value;
+        const precoTexto = precoPlano.match(/R\$([\d,.]+)/);
+        const precoNumerico = precoTexto ? parseFloat(precoTexto[1].replace(',', '.')) : 0;
+
+        const mensagemEl = document.getElementById('mensagem-desconto');
+
+        if (desconto === "ReactNative") {
+            const valorComDesconto = precoNumerico * 0.3;
+            document.getElementById('valor-total').textContent = `R$${valorComDesconto.toFixed(2).replace('.', ',')}`;
+            mensagemEl.style.display = 'block';
+        } else {
+            alert("Código de desconto inválido.");
+            mensagemEl.style.display = 'none';
+        }
+    };
+
+    function mostrarImagem() {
+      const img = document.getElementById("pix-img");
+      img.style.display = "block"; // exibe a imagem
+    }
+</script>
+
+
+</body>
+</html>

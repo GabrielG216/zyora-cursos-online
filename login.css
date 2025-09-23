@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Karma:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Karma', serif;
+    background-color: #EEE6AB;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8%;
+}
+
+.login-box {
+    background: linear-gradient(135deg, #232323 80%, #3a3b3b 100%);
+    padding: 40px 50px;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px #C5BC8E55;
+    min-width: 340px;
+}
+
+.login-title {
+    color: #fff;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.login-form label {
+    color: #EEE6AB;
+    font-weight: 500;
+}
+
+.login-form input {
+    width: 93%;
+    padding: 10px;
+    border: 2px solid #CFC280;
+    border-radius: 8px;
+    margin-top: 6px;
+    font-size: 1rem;
+    margin-bottom: 18px;
+}
+
+.btn-login {
+    background-color: #C5BC8E;
+    color: #45484B;
+    border: 3px solid #9F7638;
+    border-radius: 8px;
+    font-size: 1rem;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    margin: 20px 0px 0px 37%;
+    
+}
+
+.btn-login:hover {
+    background-color: #9F7638;
+    color: #EEE6AB;
+    border-color: #CFC280;
+    
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 18px;
+    color: #EEE6AB;
+}
+
+.login-link a {
+    color: #CFC280;
+    text-decoration: underline;
+}
+
+/* ==================== RESPONSIVIDADE LOGIN ==================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .login-box {
+        padding: 30px 40px;
+        min-width: 300px;
+    }
+
+    .login-title {
+        font-size: 1.9rem;
+    }
+
+    .login-form input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #CFC280;
+    border-radius: 8px;
+    margin-top: 6px;
+    font-size: 1rem;
+    margin-bottom: 18px;
+    box-sizing: border-box; /* Corrige o problema */
+}
+
+    .btn-login {
+        margin: 20px auto 0 auto;
+        display: block;
+    }
+}
+
+/* Celulares médios */
+@media (max-width: 768px) {
+    .container {
+        margin-top: 15%;
+    }
+
+    .login-box {
+        width: 85%;
+        padding: 25px 20px;
+        min-width: auto;
+    }
+
+    .login-title {
+        font-size: 1.6rem;
+    }
+
+    .login-form input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #CFC280;
+    border-radius: 8px;
+    margin-top: 6px;
+    font-size: 1rem;
+    margin-bottom: 18px;
+    box-sizing: border-box; /* Corrige o problema */
+}
+
+    .btn-login {
+        font-size: 0.95rem;
+        padding: 10px 16px;
+    }
+
+    .login-link {
+        font-size: 0.9rem;
+    }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+    .container {
+        margin-top: 20%;
+    }
+
+    .login-box {
+        width: 95%;
+        padding: 20px 16px;
+    }
+
+    .login-title {
+        font-size: 1.3rem;
+        margin-bottom: 18px;
+    }
+
+    .login-form label {
+        font-size: 0.9rem;
+    }
+
+    .login-form input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #CFC280;
+    border-radius: 8px;
+    margin-top: 6px;
+    font-size: 1rem;
+    margin-bottom: 18px;
+    box-sizing: border-box; /* Corrige o problema */
+}
+
+    .btn-login {
+        font-size: 0.85rem;
+        padding: 8px 14px;
+    }
+
+    .login-link {
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Zyora</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="icon" href="img/icon-page.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h2 class="login-title">Criar sua conta</h2>
+            <form class="login-form" id="cadastroForm">
+                <label for="nome">Nome</label><br>
+                <input type="text" id="nome" name="nome" placeholder="Coloque seu nome:" required>
+                <label for="email">E-mail</label><br>
+                <input type="email" id="email" name="email" placeholder="Coloque seu email:" required>
+                <label for="senha">Senha</label><br>
+                <input type="password" id="senha" name="senha" placeholder="Coloque sua senha:" required>
+                <label for="senha">Data de nascimento</label><br>
+                <input type="date" id="data" name="data" placeholder="Coloque sua senha:" required>
+                <button type="submit" class="btn-initial-first btn-login"><span>Cadastrar</span></button>
+            </form>
+            <p class="login-link">Já tem conta? <a href="login.html">Entrar</a></p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script>
+        const SUPABASE_URL = 'https://jjrhshqrfnywriqmlrkx.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpqcmhzaHFyZm55d3JpcW1scmt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgzOTc0MzEsImV4cCI6MjA3Mzk3MzQzMX0.81Sn4EC_qJCd764tSRmXHipGGCLPWFVHiRE5ObqTQJQ';
+
+        const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        document.getElementById('cadastroForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            const data_nascimento = document.getElementById('data').value;
+
+            const { data, error } = await client
+                .from('usuarios')
+                .insert([{ nome, email, senha, data_nascimento }]);
+
+            console.log('data:', data);
+            console.log('error:', error);
+
+            if (error) {
+                alert('Erro ao salvar: ' + error.message);
+            } else {
+                alert('Cadastro realizado com sucesso!');
+                window.location.href = 'login.html';
+            }
+        });
+
+    </script>
+</body>
+</html>
