@@ -89,6 +89,7 @@
                 if (data) {
                     document.getElementById('perfil-senha').textContent = data.senha || '';
                     const dataNascimento = new Date(data.data_nascimento);
+                    dataNascimento.setDate(dataNascimento.getDate() + 1);
                     document.getElementById('perfil-data').textContent = dataNascimento.toLocaleDateString('pt-BR');
                 }
             }
