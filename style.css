@@ -21,9 +21,37 @@ header{
     height: 85px;
 }
 
+.header-left{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.header-left p{
+    font-size: 1.3rem;
+    color: #b4b4b4;
+    font-weight: 600;
+    position: relative;
+    top: 7px;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.header-left p:hover {
+    transform: translateY(-3px);
+    color: white;
+}
+
 .img-header-title{
     width: 150px;
-    margin-left: 50px;
+    margin-left: 70px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.img-header-title:hover {
+    transform: translateY(-5px);    
 }
 
 .btn-header-div {
@@ -160,6 +188,7 @@ header{
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-initial-second{
@@ -171,6 +200,7 @@ header{
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-initial-first::before {
@@ -191,6 +221,8 @@ header{
 
 .btn-initial-first:hover {
     color: black;
+    transform: translateY(-10px);
+    box-shadow: 0 4px 32px rgba(0,0,0,0.08);
 }
 
 .btn-initial-first span {
@@ -216,6 +248,8 @@ header{
 
 .btn-initial-second:hover {
     color: black;
+    transform: translateY(-10px);
+    box-shadow: 0 4px 32px rgba(0,0,0,0.08);
 }
 
 .btn-initial-second span {
@@ -225,7 +259,7 @@ header{
 
 .info-we{
     margin-top: 180px;
-    background-color: #0c0c0c;
+    background-color: #1a1a1a;
     color: white;
     padding: 7rem 16rem;
     border-top: 8px solid #45484B;
@@ -256,7 +290,12 @@ header{
 }
 
 .info-we-content img{
-    width: 300px;
+    width: 350px;
+    transition: transform 0.3s ease;
+}
+
+.info-we-content img:hover {
+    transform: translateY(-30px);
 }
 
 .p-we-2{
@@ -372,7 +411,60 @@ header{
     border-radius: 4px;
     margin-right: 30px;
     border: 3px solid black;
+    transition: transform 0.5s, box-shadow 0.3s, border 0.1s;
+    cursor: pointer;
 }
+.img-certificado:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 4px solid black;
+}
+/* Fundo do modal */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.8); 
+}
+
+/* Imagem dentro do modal */
+.modal-content {
+    margin: 70px auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #000;
+    animation: zoom 0.5s ease-in-out;
+}
+
+/* Animação de zoom */
+@keyframes zoom {
+    from {transform: scale(0.8);}
+    to {transform: scale(1);}
+}
+
+/* Botão de fechar */
+.close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: #f00;
+}
+
 .certificado-info {
     display: flex;
     flex-direction: column;
@@ -430,6 +522,11 @@ header{
     box-shadow: 0 4px 16px rgba(0,0,0,0.08);
     gap: 10px;
     position: relative;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+.plano-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 8px 10px rgba(0,0,0,0.16);
 }
 .plano-nome {
     font-size: 2.7rem;
@@ -598,6 +695,282 @@ header{
     color: #B9B9B9;
     background: #181818;
 }
+
+.carroussel-all{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+}
+
+.subtitulo-secao {
+    font-size: 2rem;
+    color: #45484B;
+    text-align: center;
+    bottom: 60px;
+    font-weight: 600;
+    position: relative;
+}
+
+.carrossel-container {
+    position: relative;
+    max-width: 800px;
+    overflow: hidden;
+    background: #45484B;
+    border: 8px solid #333;
+    border-radius: 10px;
+    color: white;
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out, background 0.5s ease-in-out;
+}
+
+.carrossel-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    background-color: #3c3e41;
+    border: #222 solid 8px;
+}
+
+.carrossel-slide {
+    display: flex;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrossel-item {
+    min-width: 100%;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.carrossel-item div{
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.carrossel-item img {
+    max-width: 60px;
+    height: auto;
+}
+
+.carrossel-item h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #45484B;;
+    color: #fff;
+    border: none;
+    font-size: 3rem;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 10%;
+}
+
+.carrossel-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.carrossel-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.carrossel-item p {
+    font-size: 1.2rem;
+    margin: 8px 0;
+}
+
+.carrossel-item hr {
+    width: 60%;
+    margin: 6px auto;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+.carrossel-btn.right { right: 20px; }
+
+.sobre-main {
+  max-width: 1500px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.sobre-intro {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.sobre-title {
+  font-size: 3rem;
+  color: #45484B;
+  margin-bottom: 20px;
+}
+
+.sobre-text {
+  font-size: 1.6rem;
+  color: #333;
+  line-height: 1.8;
+}
+
+.sobre-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  margin-bottom: 120px;
+}
+
+.sobre-section:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.sobre-subtitle {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #9F7638;
+}
+
+.sobre-imagem img {
+  max-width: 520px;
+  border-radius: 12px;
+  border: 6px solid #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.sobre-imagem img:hover {
+  transform: translateY(-15px);
+  box-shadow: #000 0 4px 8px;
+}
+
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .sobre-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .sobre-section:nth-child(even) {
+    flex-direction: column;
+  }
+}
+
+.plano {
+    background-color: #2f3136; /* fundo escuro */
+    color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    width: 800px;
+    margin: 0 auto;
+    border: 10px solid #1b1b1b;
+    margin-bottom: 50px;
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.plano:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.4);
+    background: #313131;
+}
+
+.plano h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.mais-vendido {
+    color: #00c200;
+    font-size: 14px;
+    margin-left: 8px;
+}
+
+.gold-text {
+    color: #ffd700;
+}
+
+/* Texto dentro dos planos */
+.conteudo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 5%;
+    justify-content: center;
+}
+
+.plano p {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.plano-btn {
+    background: #fff;
+    color: #45484B;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 22px;
+    font-size: 1.1rem;
+    font-family: 'Karma', serif;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: auto;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.2s;
+    z-index: 1;
+}
+.plano-btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    background: #CFC280;
+    z-index: 0;
+    transition: width 0.4s;
+    border-radius: 4px;
+}
+.plano-btn:hover::before {
+    width: 100%;
+}
+.plano-btn:hover {
+    color: #222;
+}
+.plano-btn span {
+    position: relative;
+    z-index: 2;
+}
+hr{
+    margin-bottom: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .plano {
+        padding: 20px;
+    }
+
+    .plano h2 {
+        font-size: 20px;
+    }
+
+    .plano p {
+        font-size: 14px;
+    }
+}
+
+
 
 /* ==================== RESPONSIVIDADE AJUSTADA ==================== */
 

@@ -29,7 +29,7 @@ body {
     border: 8px solid #333;
     border-radius: 12px;
     padding: 25px 30px;
-    width: 280px;
+    width: 350px;
     color: white;
     text-align: initial;
     display: flex;
@@ -41,15 +41,20 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+.subcurso-card h3{
+    font-size: 1.7rem;
+}
+
 .subcurso-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 10px rgba(0,0,0,0.2);
 }
 
 .subcurso-img {
-    width: 120%;
-    height: 160px;
+    width: 100%;
+    height: 180px;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .btn-ver-curso {
@@ -84,7 +89,7 @@ h2{
 }
 
 .descricao-curso{
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     margin-top: 10px;
 }
 

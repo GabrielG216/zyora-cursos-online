@@ -8,7 +8,7 @@
     <link rel="icon" href="img/icon-page.png" type="image/x-icon">
     <style>
 
-        .container {
+.container {
     width: 90%;              /* ocupa quase toda a tela no mobile */
     max-width: 700px;        /* limite no desktop */
     margin: 40px auto;
@@ -17,6 +17,12 @@
     border-radius: 8px;
     color: white;
     border: 8px solid #222;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 32px rgba(0,0,0,0.08);
 }
 
 .img-header-back {

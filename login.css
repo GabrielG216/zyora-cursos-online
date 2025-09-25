@@ -19,6 +19,12 @@ body {
     border-radius: 18px;
     box-shadow: 0 2px 16px #C5BC8E55;
     min-width: 340px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 32px rgba(0,0,0,0.08);
 }
 
 .login-title {
@@ -73,6 +79,7 @@ body {
     color: #CFC280;
     text-decoration: underline;
 }
+
 
 /* ==================== RESPONSIVIDADE LOGIN ==================== */
 
