@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - Zyora</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="contato.css">
+  <link rel="icon" href="img/icon-page.png" type="image/x-icon">
+  <style>
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      font-size: 1.4rem;
+      text-align: center;
+      max-width: 400px;
+    }
+    .modal button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      background: #333;
+      color: #fff;
+      border-radius: 6px;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+    .modal button:hover {
+      background: #555;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="header-left">
+    <img onclick="window.location.href='index.html'" src="img/titulo-header.png" alt="Zyora" class="img-header-title">
+    <a style="text-decoration: none;" href="planos.html"><p>Planos de curso</p></a>
+    <a style="text-decoration: none;" href="sobre.html"><p>Sobre nós</p></a>
+  </div>
+  <div>
+        <div id="header-user"></div>
+            
+            <div class="btn-header-div">
+                <a href="cadastro.html">
+                    <button class="btn-header-cadastro" id="btn-cadastro"><span>Cadastre-se</span></button>
+                </a>
+                <a href="login.html">
+                    <button class="btn-header-entrar" id="btn-login"><span>Entrar</span></button>    
+                </a>
+            </div>
+        </div>
+</header>
+
+<main class="contato-main">
+  <section class="contato-intro">
+    <h1 class="contato-title">Entre em Contato</h1>
+  </section>
+
+  <section class="contato-container">
+    <!-- Coluna esquerda: formulário -->
+    <div class="contato-coluna">
+      <form id="contato-form" class="contato-form">
+        <div class="contato-campo">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome..." required>
+        </div>
+
+        <div class="contato-campo">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="Digite seu e-mail..." required>
+        </div>
+
+        <div class="contato-campo">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite sua mensagem..." required></textarea>
+        </div>
+
+        <button id="mandar-mensagem" type="submit" class="contato-btn"><span>Enviar Mensagem</span></button>
+      </form>
+    </div>
+
+    <!-- Coluna direita: chatbot -->
+    <div class="contato-coluna contato-chatbot">
+      <h2 class="chatbot-title">Chatbot</h2>
+      <div class="chatbot-box">
+        <p class="chatbot-msg">Olá! Como posso te ajudar?</p>
+      </div>
+      <div class="chatbot-input">
+        <input type="text" placeholder="Digite sua mensagem...">
+        <button>Enviar</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <p>✅ Mensagem recebida! Em breve responderemos em seu email.</p>
+    <button id="fechar-modal">Fechar</button>
+  </div>
+</div>
+
+<script>
+  // Chatbot
+  const chatbotBox = document.querySelector('.chatbot-box');
+  const chatbotInput = document.querySelector('.chatbot-input input');
+  const chatbotButton = document.querySelector('.chatbot-input button');
+
+  function addMessage(text, sender = "user") {
+    const msgElem = document.createElement('p');
+    msgElem.classList.add('chatbot-msg');
+    msgElem.textContent = sender === "user" ? `Você: ${text}` : `Zyora: ${text}`;
+    chatbotBox.appendChild(msgElem);
+    chatbotBox.scrollTop = chatbotBox.scrollHeight;
+  }
+
+  function botReply(userMessage) {
+    const lowerMsg = userMessage.toLowerCase();
+
+    // Saudações
+    if (["oi", "olá", "ola", "bom dia", "boa tarde", "boa noite"].some(s => lowerMsg.includes(s))) {
+      return "Olá! Que bom te ver por aqui Como posso te ajudar?";
+    }
+
+    // Despedidas
+    if (["tchau", "até mais", "ate mais", "até logo", "ate logo", "adeus", "falou"].some(s => lowerMsg.includes(s))) {
+      return "Até logo! Obrigado por visitar a Zyora";
+    }
+
+    // Agradecimentos
+    if (["obrigado", "obrigada", "valeu", "agradecido"].some(s => lowerMsg.includes(s))) {
+      return "De nada! Estamos sempre à disposição";
+    }
+
+    // Resposta padrão
+    return "Obrigado por sua mensagem! Em breve entraremos em contato.";
+  }
+
+  chatbotButton.addEventListener('click', () => {
+    const userMessage = chatbotInput.value.trim();
+    if (userMessage) {
+      addMessage(userMessage, "user");
+
+      chatbotInput.value = '';
+
+      // "Digitando..."
+      const typingElem = document.createElement('p');
+      typingElem.classList.add('chatbot-msg');
+      typingElem.textContent = "Zyora está digitando...";
+      chatbotBox.appendChild(typingElem);
+      chatbotBox.scrollTop = chatbotBox.scrollHeight;
+
+      setTimeout(() => {
+        typingElem.remove();
+        addMessage(botReply(userMessage), "bot");
+      }, 1200);
+    }
+  });
+
+  chatbotInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      chatbotButton.click();
+    }
+  });
+
+  // Modal do formulário
+  const form = document.getElementById('contato-form');
+  const modal = document.getElementById('modal');
+  const fecharModal = document.getElementById('fechar-modal');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault(); 
+    modal.style.display = "flex"; // abre modal só ao enviar
+  });
+
+  fecharModal.addEventListener('click', () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  const nomeUsuario = localStorage.getItem('usuario_nome');
+    if (nomeUsuario) {
+        document.getElementById('header-user').innerHTML = `
+            <img id="user-img" src="img/icon-user.png" alt="Perfil" 
+                 style="width:70px;height:70px;border-radius:50%;cursor:pointer;margin-right:30px;">
+        `;
+        document.getElementById('btn-login').style.display = 'none';
+        document.getElementById('btn-cadastro').style.display = 'none';
+
+        document.getElementById('user-img').onclick = function() {
+            window.location.href = 'perfil.html';
+        };
+    } else {
+        document.getElementById('header-user').innerHTML = '';
+        document.getElementById('btn-login').style.display = '';
+        document.getElementById('btn-cadastro').style.display = '';
+    }
+</script>
+
+</body>
+</html>

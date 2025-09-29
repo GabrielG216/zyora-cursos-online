@@ -801,7 +801,7 @@ header{
 
 .sobre-main {
   max-width: 1500px;
-  margin: 80px auto;
+  margin: 100px auto;
   padding: 0 20px;
 }
 
@@ -904,7 +904,8 @@ header{
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
-    margin-top: 5%;
+    margin-top: 6%;
+    margin-bottom: 4%;
     justify-content: center;
 }
 

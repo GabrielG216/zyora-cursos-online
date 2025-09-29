@@ -94,6 +94,33 @@
 
   </main>
 
+  <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h4>Informações Zyora</h4>
+                <p>Fundador: Gabriel Vitor - aluno SenacMG</p>
+                <p>Email: mbrdrago@gmail.com</p>
+                <p>Telefone: 034 98877-8985</p>
+            </div>
+            <div class="footer-links">
+                <h4>Links úteis</h4>
+                <ul>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="#">Cursos</a></li>
+                    <li><a href="planos.html">Planos</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h4>Redes sociais</h4>
+                <p>Instagram: @_gabrielvgf</p>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2024 Zyora. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
   <script>
   // Seleciona todas as divs de imagem
   const imagens = document.querySelectorAll(".sobre-imagem img");
@@ -121,6 +148,24 @@
           });
       });
   });
+
+  const nomeUsuario = localStorage.getItem('usuario_nome');
+    if (nomeUsuario) {
+        document.getElementById('header-user').innerHTML = `
+            <img id="user-img" src="img/icon-user.png" alt="Perfil" 
+                 style="width:70px;height:70px;border-radius:50%;cursor:pointer;margin-right:30px;">
+        `;
+        document.getElementById('btn-login').style.display = 'none';
+        document.getElementById('btn-cadastro').style.display = 'none';
+
+        document.getElementById('user-img').onclick = function() {
+            window.location.href = 'perfil.html';
+        };
+    } else {
+        document.getElementById('header-user').innerHTML = '';
+        document.getElementById('btn-login').style.display = '';
+        document.getElementById('btn-cadastro').style.display = '';
+    }
 </script>
 
 </body>
