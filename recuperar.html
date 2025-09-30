@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperar Senha</title>
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="shortcut icon" href="img/icon-page.png" type="image/x-icon">
+</head>
+<body>
+  <div class="container">
+    <div class="login-box">
+      <h2 class="login-title">Recuperar Senha</h2>
+
+      <form id="verificarEmailForm" class="reset-form">
+        <label for="resetEmail" class="reset-label">Digite seu e-mail:</label><br>
+        <input type="email" id="resetEmail" class="reset-input" placeholder="Seu e-mail" required>
+        <button type="submit" class="btn-reset">Verificar E-mail</button>
+      </form>
+
+      <form id="alterarSenhaForm" class="reset-form" style="display:none; margin-top:20px;">
+        <label for="novaSenha" class="reset-label">Nova Senha:</label><br>
+        <input type="password" id="novaSenha" class="reset-input" placeholder="Nova senha" required>
+        <button type="submit" class="btn-reset">Alterar Senha</button>
+      </form>
+
+      <p class="login-link">
+        <a href="login.html">Voltar ao login</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="js/reset.js"></script>
+</body>
+</html>

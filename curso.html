@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página de curso - Zyora</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="curso.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/curso.css">
   <link rel="icon" href="img/icon-page.png" type="image/x-icon">
 </head>
 <body>
@@ -26,7 +26,7 @@
       const params = new URLSearchParams(window.location.search);
       const categoriaId = params.get("categoria");
 
-      const response = await fetch("cursos.json");
+      const response = await fetch("js/cursos.json");
       const data = await response.json();
 
       const container = document.getElementById("curso-detalhes");
@@ -57,7 +57,7 @@
     }
 
     async function mostrarCurso(subcursoId) {
-      const response = await fetch("cursos.json");
+      const response = await fetch("js/cursos.json");
       const data = await response.json();
 
       let cursoEncontrado = null;
