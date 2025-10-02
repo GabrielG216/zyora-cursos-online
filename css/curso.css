@@ -103,6 +103,13 @@ h2{
     margin-top: 20px;
 }
 
+.texto-extra{
+    font-size: 1.2rem;
+    width: 650px;
+    margin-top: 20px;
+    text-align: justify;
+}
+
 /* CARD SELECIONADO CENTRALIZADO */
 #card-curso-selecionado {
       display: none;

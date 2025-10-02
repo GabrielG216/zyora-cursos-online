@@ -10,10 +10,11 @@
           "id": 101,
           "nome": "Inglês",
           "descricao": "Curso de inglês completo com foco em conversação.",
+          "texto": "O curso de inglês é projetado para ajudar os alunos a desenvolverem suas habilidades de comunicação em inglês, com ênfase na conversação prática. As aulas são interativas e envolventes, utilizando uma variedade de recursos, como vídeos, áudios e atividades em grupo. Os alunos aprenderão vocabulário, gramática e expressões idiomáticas essenciais para se comunicar efetivamente em situações do dia a dia. Além disso, o curso inclui sessões de prática de fala, onde os alunos terão a oportunidade de praticar suas habilidades de conversação com colegas e instrutores experientes. Ao final do curso, os alunos estarão mais confiantes e preparados para usar o inglês em contextos reais, seja para viagens, trabalho ou estudos.",
           "imagem": "curso-ingles.jpg",
           "professor": {
             "nome": "Elvis Presley",
-            "descricao": "Especialista em línguas estrangeiras com 10 anos de experiência.",
+            "descricao": "Com ampla experiência no ensino do idioma, foca em desenvolver a fluência, a pronúncia e a compreensão cultural. Suas aulas unem gramática e conversação de forma prática, preparando os alunos para viagens, mercado de trabalho e exames internacionais",
             "imagem": "professor-ingles.jpg"
           }
         },
@@ -21,10 +22,11 @@
           "id": 102,
           "nome": "Espanhol",
           "descricao": "Aprenda espanhol com aulas dinâmicas e práticas.",
+          "texto": "O curso de espanhol é projetado para ajudar os alunos a se tornarem fluentes em espanhol, com ênfase na conversação e compreensão auditiva. As aulas são interativas e envolventes, utilizando uma variedade de recursos, como vídeos, áudios e atividades em grupo. Os alunos aprenderão vocabulário, gramática e expressões idiomáticas essenciais para se comunicar efetivamente em situações do dia a dia. Além disso, o curso inclui sessões de prática de fala, onde os alunos terão a oportunidade de praticar suas habilidades de conversação com colegas e instrutores experientes. Ao final do curso, os alunos estarão mais confiantes e preparados para usar o espanhol em contextos reais, seja para viagens, trabalho ou estudos.",
           "imagem": "curso-espanhol.jpg",
           "professor": {
             "nome": "Salvador Dalí",
-            "descricao": "Professor nativo com experiência em ensino de espanhol para estrangeiros.",
+            "descricao": "Nativo em espanhol, combina técnicas modernas de ensino com imersão cultural, ajudando o aluno a compreender a língua em diferentes contextos. Ideal para quem busca aprender para turismo, estudos ou carreira.",
             "imagem": "professor-espanhol.jpeg"
           }
         },
@@ -33,9 +35,10 @@
           "nome": "Francês",
           "descricao": "Curso de francês voltado para comunicação do dia a dia.",
           "imagem": "curso-frances.jpg",
+          "texto": "o Curso de francês é projetado para ajudar os alunos a desenvolverem suas habilidades de comunicação em francês, com ênfase na conversação prática. As aulas são interativas e envolventes, utilizando uma variedade de recursos, como vídeos, áudios e atividades em grupo. Os alunos aprenderão vocabulário, gramática e expressões idiomáticas essenciais para se comunicar efetivamente em situações do dia a dia. Além disso, o curso inclui sessões de prática de fala, onde os alunos terão a oportunidade de praticar suas habilidades de conversação com colegas e instrutores experientes. Ao final do curso, os alunos estarão mais confiantes e preparados para usar o francês em contextos reais, seja para viagens, trabalho ou estudos.",
           "professor": {
             "nome": "Kylian Mbappé",
-            "descricao": "Professor francês com 8 anos de experiência em ensino de idiomas.",
+            "descricao": "Especialista no ensino do francês, com foco em comunicação oral e escrita. Suas aulas trabalham a gramática de forma clara, sempre conectada ao uso prático no cotidiano e ao universo cultural da França.",
             "imagem": "professor-frances.jpg"
           }
         }
@@ -51,10 +54,11 @@
           "id": 201,
           "nome": "Finanças Pessoais",
           "descricao": "Curso para aprender a organizar e controlar suas finanças.",
+          "texto": "O curso de Finanças Pessoais é projetado para ajudar os alunos a desenvolverem habilidades essenciais para gerenciar suas finanças de maneira eficaz. As aulas cobrem tópicos como orçamento, economia, investimentos, planejamento financeiro e gestão de dívidas. Os alunos aprenderão a criar um plano financeiro personalizado, identificar oportunidades de economia e tomar decisões informadas sobre seus gastos. Além disso, o curso inclui estudos de caso e exercícios práticos para aplicar os conceitos aprendidos em situações reais. Ao final do curso, os alunos estarão mais confiantes e preparados para alcançar seus objetivos financeiros e garantir uma vida financeira saudável.", 
           "imagem": "curso-financas-pessoais.jpg",
           "professor": {
             "nome": "Elon Musk",
-            "descricao": "Economista formado pela USP e especialista em educação financeira.",
+            "descricao": "Ajuda alunos a conquistar maior controle da vida financeira. Ensina a organizar o orçamento, reduzir dívidas e planejar metas de curto e longo prazo, promovendo hábitos saudáveis de consumo.",
             "imagem": "professor-financas.jpg"
           }
         },
@@ -62,10 +66,11 @@
           "id": 202,
           "nome": "Investimentos",
           "descricao": "Aprenda a investir em renda fixa, ações e fundos imobiliários.",
+          "texto": "O curso de Investimentos é projetado para ajudar os alunos a entenderem os diferentes tipos de investimentos disponíveis no mercado e como tomar decisões informadas para alcançar seus objetivos financeiros. As aulas cobrem tópicos como renda fixa, ações, fundos imobiliários, análise de risco, diversificação de portfólio e estratégias de investimento. Os alunos aprenderão a avaliar diferentes opções de investimento, identificar oportunidades de mercado e desenvolver um plano de investimento personalizado. Além disso, o curso inclui estudos de caso e exercícios práticos para aplicar os conceitos aprendidos em situações reais. Ao final do curso, os alunos estarão mais confiantes e preparados para investir seu dinheiro de maneira eficaz e alcançar seus objetivos financeiros a longo prazo.",
           "imagem": "curso-investimento.jpg",
           "professor": {
             "nome": "Bills Gates",
-            "descricao": "Analista financeiro com mais de 15 anos de experiência no mercado.",
+            "descricao": "Especialista no mercado financeiro, oferece conteúdos que vão do básico ao avançado. Ensina diferentes tipos de investimentos, gestão de riscos e estratégias para alcançar independência financeira.",
             "imagem": "professor-investimento.jpg"
           }
         },
@@ -73,10 +78,11 @@
           "id": 203,
           "nome": "Economia Básica",
           "descricao": "Curso introdutório sobre conceitos fundamentais de economia.",
+          "texto": "O curso de Economia Básica é projetado para fornecer aos alunos uma compreensão fundamental dos princípios econômicos que governam o funcionamento dos mercados e das economias. As aulas cobrem tópicos como oferta e demanda, inflação, desemprego, políticas fiscais e monetárias, comércio internacional e desenvolvimento econômico. Os alunos aprenderão a analisar questões econômicas atuais, interpretar dados econômicos e entender o impacto das decisões econômicas na vida cotidiana. Além disso, o curso inclui estudos de caso e discussões em grupo para aplicar os conceitos aprendidos em situações reais. Ao final do curso, os alunos estarão mais informados e preparados para compreender os desafios econômicos enfrentados pela sociedade moderna.",
           "imagem": "curso-economia.jpg",
           "professor": {
             "nome": "Mark Zuckerberg",
-            "descricao": "Doutor em economia com foco em políticas públicas.",
+            "descricao": "Explica conceitos fundamentais da economia de maneira simples e acessível. Mostra como temas como inflação, mercado e produção afetam o dia a dia, tornando o aprendizado útil e aplicável.",
             "imagem": "professor-economia.jpg"
           }
         }
@@ -92,10 +98,11 @@
           "id": 301,
           "nome": "Segurança da Informação",
           "descricao": "Curso sobre proteção de dados e cibersegurança.",
+          "texto": "O curso de Segurança da Informação é projetado para fornecer aos alunos uma compreensão abrangente dos princípios e práticas essenciais para proteger informações e sistemas contra ameaças cibernéticas. As aulas cobrem tópicos como criptografia, controle de acesso, segurança de redes, gestão de riscos, políticas de segurança e conformidade regulatória. Os alunos aprenderão a identificar vulnerabilidades, implementar medidas de segurança eficazes e responder a incidentes de segurança. Além disso, o curso inclui estudos de caso e exercícios práticos para aplicar os conceitos aprendidos em situações reais. Ao final do curso, os alunos estarão mais preparados para enfrentar os desafios da segurança da informação em um mundo digital em constante evolução.",
           "imagem": "curso-seguranca.png",
           "professor": {
             "nome": "Leon e Nilce",
-            "descricao": "Consultores em segurança da informação com experiência internacional.",
+            "descricao": "Profissional da área de TI com sólida experiência em proteção de sistemas e dados. Ensina práticas essenciais para evitar ataques virtuais, preservar a privacidade e manter ambientes digitais seguros.",
             "imagem": "professor-seguranca.jpg"
           }
         },
@@ -103,10 +110,11 @@
           "id": 302,
           "nome": "Redes",
           "descricao": "Aprenda sobre redes de computadores e protocolos de comunicação.",
+          "texto": "O curso de Redes é projetado para fornecer aos alunos uma compreensão sólida dos conceitos e tecnologias fundamentais relacionados a redes de computadores. As aulas cobrem tópicos como arquitetura de redes, protocolos de comunicação, endereçamento IP, roteamento, comutação, segurança de redes e administração de redes. Os alunos aprenderão a configurar, gerenciar e solucionar problemas em redes locais (LANs) e redes amplas (WANs), além de entender os princípios por trás da internet e das redes sem fio. Além disso, o curso inclui laboratórios práticos e estudos de caso para aplicar os conceitos aprendidos em situações reais. Ao final do curso, os alunos estarão mais preparados para trabalhar com redes de computadores em ambientes profissionais.",
           "imagem": "curso-redes.jpg",
           "professor": {
             "nome": "Steve Jobs",
-            "descricao": "Especialista em infraestrutura de redes e segurança cibernética.",
+            "descricao": "Com prática em infraestrutura tecnológica, ensina fundamentos de redes de computadores, protocolos de comunicação e configuração de equipamentos, preparando o aluno para atuar em ambientes corporativos.",
             "imagem": "professor-redes.jpg"
           }
         },
@@ -114,10 +122,11 @@
           "id": 303,
           "nome": "Programação",
           "descricao": "Curso de lógica e linguagens de programação modernas.",
+          "texto": "O curso de Programação é projetado para ensinar aos alunos os fundamentos da lógica de programação e as principais linguagens de programação modernas. As aulas cobrem tópicos como estruturas de dados, algoritmos, programação orientada a objetos, desenvolvimento web e mobile, além de introduzir linguagens populares como Python, JavaScript e Java. Os alunos aprenderão a escrever código eficiente, depurar programas e desenvolver aplicações funcionais. Além disso, o curso inclui projetos práticos e exercícios de codificação para aplicar os conceitos aprendidos em situações reais. Ao final do curso, os alunos estarão mais confiantes e preparados para iniciar uma carreira na área de desenvolvimento de software.",
           "imagem": "curso-programacao.jpg",
           "professor": {
             "nome": "Daniel Andrade",
-            "descricao": "Engenheiro de software, desenvolvedor front-end, nosso grande professor que está com a um ano nessa jornada!",
+            "descricao": "Experiente no ensino de lógica e linguagens de programação, ajuda os alunos a desenvolverem desde pequenos projetos até aplicações completas, sempre incentivando boas práticas e pensamento criativo.",
             "imagem": "daniel-andrade.png"
           }
         }
@@ -133,10 +142,11 @@
           "id": 401,
           "nome": "Enfermagem",
           "descricao": "Curso básico de enfermagem para iniciantes.",
+          "texto": "O curso de Enfermagem é projetado para fornecer aos alunos uma compreensão fundamental dos princípios e práticas essenciais para a prestação de cuidados de enfermagem de alta qualidade. As aulas cobrem tópicos como anatomia e fisiologia, técnicas de enfermagem, administração de medicamentos, cuidados com pacientes, ética profissional e comunicação em saúde. Os alunos aprenderão a realizar procedimentos básicos de enfermagem, monitorar sinais vitais, documentar cuidados e colaborar com equipes de saúde. Além disso, o curso inclui simulações práticas e estudos de caso para aplicar os conceitos aprendidos em situações reais. Ao final do curso, os alunos estarão mais preparados para iniciar uma carreira na área de enfermagem e contribuir para o bem-estar dos pacientes.",
           "imagem": "curso-enfermagem.jpg",
           "professor": {
             "nome": "Drauzio Varella",
-            "descricao": "Enfermeiro com mais de 20 anos de experiência em hospitais.",
+            "descricao": "Profissional atuante na área da saúde, traz sua vivência prática para a sala de aula. Ensina fundamentos técnicos, cuidados essenciais e práticas clínicas que formam a base de uma atuação segura e eficiente.",
             "imagem": "professor-enfermagem.jpeg"
           }
         },
@@ -144,10 +154,11 @@
           "id": 402,
           "nome": "Primeiros Socorros",
           "descricao": "Aprenda técnicas fundamentais para situações de emergência.",
+          "texto": "O curso de Primeiros Socorros é projetado para ensinar aos alunos as habilidades essenciais para responder a emergências médicas e prestar cuidados imediatos até a chegada de profissionais de saúde. As aulas cobrem tópicos como avaliação da cena, suporte básico de vida, controle de hemorragias, tratamento de fraturas, manejo de queimaduras, reanimação cardiopulmonar (RCP) e uso de desfibriladores externos automáticos (DEA). Os alunos aprenderão a identificar sinais e sintomas de condições médicas comuns, tomar decisões rápidas e eficazes e aplicar técnicas de primeiros socorros com segurança. Além disso, o curso inclui simulações práticas e exercícios de role-playing para aplicar os conceitos aprendidos em situações reais. Ao final do curso, os alunos estarão mais confiantes e preparados para agir em emergências e salvar vidas.",
           "imagem": "curso-primeiros-socorros.jpg",
           "professor": {
             "nome": "Júlio Balestrin",
-            "descricao": "Instrutor certificado em primeiros socorros e resgate.",
+            "descricao": "Capacita os alunos a agir em situações de emergência. Ensina técnicas de atendimento imediato, como reanimação, controle de hemorragias e imobilização, com foco em salvar vidas e reduzir riscos.",
             "imagem": "professor-primeiro-socorros.jpg"
           }
         },
@@ -155,10 +166,11 @@
           "id": 403,
           "nome": "Saúde Mental",
           "descricao": "Curso voltado para cuidados com a saúde emocional e bem-estar.",
+          "texto": "O curso de Saúde Mental é projetado para fornecer aos alunos uma compreensão abrangente dos fatores que influenciam a saúde emocional e o bem-estar psicológico. As aulas cobrem tópicos como estresse, ansiedade, depressão, transtornos mentais comuns, estratégias de enfrentamento, autocuidado e promoção da resiliência. Os alunos aprenderão a identificar sinais e sintomas de problemas de saúde mental, desenvolver habilidades de comunicação eficazes e aplicar técnicas de autocuidado para melhorar seu bem-estar emocional. Além disso, o curso inclui discussões em grupo e atividades práticas para aplicar os conceitos aprendidos em situações reais. Ao final do curso, os alunos estarão mais informados e preparados para cuidar de sua saúde mental e apoiar outros em sua jornada de bem-estar emocional.",
           "imagem": "curso-saude-mental.jpg",
           "professor": {
             "nome": "Renato Cariani",
-            "descricao": "Psicólogo clínico especializado em terapia cognitivo-comportamental.",
+            "descricao": "Especialista em bem-estar psicológico, ensina estratégias de autocuidado, controle da ansiedade, gestão do estresse e fortalecimento emocional. Promove um aprendizado que valoriza equilíbrio e qualidade de vida.",
             "imagem": "professor-saude-mental.jpg"
           }
         }

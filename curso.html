@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -47,6 +47,7 @@
                 </div>
               `).join('')}
             </div>
+
           `;
         } else {
           container.innerHTML = "<p>Categoria não encontrada.</p>";
@@ -77,7 +78,8 @@
           <h2>${cursoEncontrado.nome}</h2>
           <h4>Categoria: ${cursoEncontrado.categoria}</h4>
           <img src="img-curso/${cursoEncontrado.imagem}" alt="${cursoEncontrado.nome}" class="curso-img">
-          <p class="info-curso">${cursoEncontrado.descricao}</p>
+          <!-- Novo parágrafo puxado da API -->
+          <p class="texto-extra">${cursoEncontrado.texto || "Mais detalhes em breve..."}</p>
 
           <h3 class="professor">Professor</h3>
           <img src="img-curso/${cursoEncontrado.professor.imagem}" alt="${cursoEncontrado.professor.nome}" class="professor-img">
