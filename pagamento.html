@@ -202,7 +202,7 @@ form p {
 
         const mensagemEl = document.getElementById('mensagem-desconto');
 
-        if (desconto === "PortugolStudio") {
+        if (desconto === "LocalStorage") {
             const valorComDesconto = precoNumerico * 0.3;
             document.getElementById('valor-total').textContent = `R$${valorComDesconto.toFixed(2).replace('.', ',')}`;
             mensagemEl.style.display = 'block';
