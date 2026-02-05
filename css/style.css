@@ -6,6 +6,22 @@
     box-sizing: border-box;
 }
 
+/* Ajustes adicionais para header em mobile */
+@media (max-width: 768px) {
+    /* reduz o ícone de perfil mesmo quando está com estilo inline */
+    #user-img {
+        width: 50px !important;
+        height: 50px !important;
+        margin-right: 12px !important;
+    }
+
+    /* ajusta o espaçamento do título do header para caber no mobile */
+    .img-header-title {
+        width: 130px;
+        margin-left: 20px;
+    }
+}
+
 body {
     font-family: 'Karma', serif;
     background-color: #EEE6AB;
@@ -301,6 +317,54 @@ header{
 .p-we-2{
     font-size: 26px;
     margin-left: 13px;
+}
+
+/* RESPONSIVO: empilha conteúdo da seção .info-we em telas pequenas */
+@media (max-width: 768px) {
+    .info-we{
+        padding: 3rem 1.5rem;
+        margin-top: 80px;
+    }
+
+    svg{
+        display: none;
+    }
+
+    .info-we-content{
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 10px;
+    }
+
+    .info-we-text{
+        align-items: center;
+        text-align: center;
+        gap: 18px;
+    }
+
+    .h2-we{
+        font-size: 36px;
+    }
+
+    .p-we, .p-we-2{
+        font-size: 18px;
+        margin-left: 0;
+    }
+
+    .info-we-content img{
+        width: 70%;
+        max-width: 320px;
+    }
+
+    /* esconder a animação loader dentro da seção em mobile */
+    .info-we-content .loader {
+        display: none;
+    }
+
+    .header-left p{
+        font-size: 0.9rem;
+    }
 }
 
 .container-main {

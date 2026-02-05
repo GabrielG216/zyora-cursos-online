@@ -1,6 +1,5 @@
-const SUPABASE_URL = "https://jjrhshqrfnywriqmlrkx.supabase.co";
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpqcmhzaHFyZm55d3JpcW1scmt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgzOTc0MzEsImV4cCI6MjA3Mzk3MzQzMX0.81Sn4EC_qJCd764tSRmXHipGGCLPWFVHiRE5ObqTQJQ";
-const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+// As credenciais são importadas do arquivo config.js
+// Verifique se o arquivo js/config.js está carregado no seu HTML
 
 const verificarEmailForm = document.getElementById("verificarEmailForm");
 const alterarSenhaForm = document.getElementById("alterarSenhaForm");

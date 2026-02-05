@@ -72,12 +72,10 @@
         <button class="btn-sair" id="btn-sair">Sair da conta</button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="js/config.js"></script>
     <script>
         const nomeUsuario = localStorage.getItem('usuario_nome');
         const emailUsuario = localStorage.getItem('usuario_email');
-        const SUPABASE_URL = 'https://jjrhshqrfnywriqmlrkx.supabase.co';
-        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpqcmhzaHFyZm55d3JpcW1scmt4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTgzOTc0MzEsImV4cCI6MjA3Mzk3MzQzMX0.81Sn4EC_qJCd764tSRmXHipGGCLPWFVHiRE5ObqTQJQ';
-        const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
         document.getElementById('perfil-nome').textContent = nomeUsuario || '';
         document.getElementById('perfil-email').textContent = emailUsuario || '';
