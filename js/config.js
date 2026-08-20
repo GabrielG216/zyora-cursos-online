@@ -9,8 +9,8 @@
 // const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_KEY;
 
 // Para projeto estático, configure as variáveis abaixo:
-const SUPABASE_URL = 'https://yudcyacsqctdwpculyds.supabase.co';
-const SUPABASE_KEY = 'sb_publishable_VO2MHCstSp368lrTqgCQcA_gcp6Efb_';
+const SUPABASE_URL = 'https://ybpjghnnwxabynfwndun.supabase.co';
+const SUPABASE_KEY = 'sb_publishable_XHMVtUje-q01Ml_Nfu6i2A_GN8EtXj3';
 
 // Inicializar cliente Supabase
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
